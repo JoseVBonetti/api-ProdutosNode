@@ -25,6 +25,13 @@ function verificaTokenJWT(req, res, next){
     })
 }
 
+
+server.get("/", (req, res) => {
+    return res.send("Bem vindo a API de produtos na nuvem.")
+})
+
+
+
 server.post("/login", (req, res, next)=>{
     if(req.body.usuario === "neto" && req.body.senha === "123"){
         //id do usuario logado
