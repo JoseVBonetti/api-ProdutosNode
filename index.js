@@ -43,7 +43,7 @@ server.post("/login", (req, res, next)=>{
     return res.status(500),json({mesagem : "Usuario ou senha incorretos"})
 })
 
-server.get("/produtos", verificaTokenJWT, async (req, res) => {
+server.get("/produtos", async (req, res) => {
     
     try {
         const produtos = await Produto.find()
@@ -54,7 +54,7 @@ server.get("/produtos", verificaTokenJWT, async (req, res) => {
     }
  })
 
-server.post("/produtos", verificaTokenJWT, async (req, res) => {
+server.post("/produtos", async (req, res) => {
     
     const { descricao, estoque } = req.body
 
